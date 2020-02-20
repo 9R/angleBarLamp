@@ -42,3 +42,15 @@ The lamp parts where designed using Freecad 0.19 and the [assembly4 workbench](h
   * 2x 1.5m wire
 ## Folding Mechanism
 ![folding animation](images/foldingAnimation.gif "Folding mechanism")
+
+### Running the animation in FreeCAD
+
+* Open the assembly4 workbench
+* Run "Animate Assembly" with these parameters
+
+
+![animation parameters](images/animationParameters.png "")
+
+### Background
+
+Animation parameters are in calculated in **Model/Variables** and the attachment section of the **LCS_screwhole** in **Parts/p_angleBar_8mm_arm** 
