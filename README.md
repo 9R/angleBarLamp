@@ -18,7 +18,7 @@ The lamp parts where designed using Freecad 0.19 and the [assembly4 workbench](h
 ### CableClips
 ![folding animation](images/cableClip.png "CableClip")
 
-##Other parts
+## Other parts
 
 ### Screws:
 ##### topBlock
