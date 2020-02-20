@@ -5,7 +5,7 @@ Folding lamp made out of 3d-printed parts and anglebars. Inspired by the lamps f
 
 ![folding animation](images/angleBarLamp.png "")
 
-The lamp parts where designed using Freecad 0.19 and the [assembly4 workbench](https://github.com/Zolko-123/FreeCAD_Assembly4).
+The lamp parts were designed using Freecad 0.19 and the [assembly4 workbench](https://github.com/Zolko-123/FreeCAD_Assembly4).
 
 ## Printed parts
 
@@ -53,4 +53,10 @@ The lamp parts where designed using Freecad 0.19 and the [assembly4 workbench](h
 
 ### Background
 
-Animation parameters are in calculated in **Model/Variables** and the attachment section of the **LCS_screwhole** in **Parts/p_angleBar_8mm_arm** 
+This assembly is a bottom-up design (no master sketch), mostly because I already had created some of the parts prior to using assembly4.
+
+Parts are attached using features on the bodies as reference for LocalCoordinateSystems. For the moving parts these refernces are mostly circular reatures with **Concentric** attachment mode (i.e. **LCS_armRight** in **p_topBlock**).
+
+The other LCSs are attached in **XY tangent to surface** mode using a face and a vertex on that face as references. In some cases where a vertex in the right position was not available x & y offsets were used (i.e. **LCS_connector10mm_lower** in **bottomBlock**)
+
+Animation is controlled by the **time** variable. Nested conditional statements execute the different parts of the motion as the **time** variable is incremented. This way rotation und position parameters of the arms are calculated in the attachment section of the **LCS_screwhole** in **Parts/p_angleBar_8mm_arm**. To keep the expression managable some intermediate variables are calculated in **Model/Variables**.
