@@ -1,11 +1,10 @@
 # Folding AngleBarLamp
 
-Folding lamp made out of 3d-printed parts and anglebars. Inspired by the lamps from [kliments workshoptoolset](https://github.com/kliment/workshoptoolset)
-
+This is a folding lamp made out of 3d-printed parts and angle-bars. The design was inspired by the lamps from [kliments workshoptoolset](https://github.com/kliment/workshoptoolset)
 
 ![folding animation](images/angleBarLamp.png "")
 
-The lamp parts were designed using Freecad 0.19 and the [assembly4 workbench](https://github.com/Zolko-123/FreeCAD_Assembly4).
+The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) and the [assembly4 workbench v0.50.6](https://github.com/Zolko-123/FreeCAD_Assembly4).
 
 ## Printed parts
 
@@ -22,41 +21,41 @@ The lamp parts were designed using Freecad 0.19 and the [assembly4 workbench](ht
 
 ### Screws:
 ##### topBlock
-  * 2x M3x16
-  
-  or
-   
-  * 2x M3x18 + 2x M3 Washers & 2x M3 Nuts
+  * 2x M3x28
       
 ##### COB LED attachment
-  * 4x M3x10
+  * 4x M3x4
 
-### angle bars for arms and foot (length can be modified to suit needs):
+### Angle bars for arms and foot (length can be modified to suit needs):
   * 2x  8mm x 400mm
   * 2x 10mm x 400mm
+
+### Housing
+  * 480mm of DN32 HT pipe 
 
 ### Electronics:
   * 2x COP LEDs that suite your needs
   * Power supply
   * Switch or dimmer (check workshoptoolset)
   * 2x 1.5m wire
+
 ## Folding Mechanism
 ![folding animation](images/foldingAnimation.gif "Folding mechanism")
+![folding animation_closeup](images/foldingAnimationCloseup.gif "Folding mechanismCloseup")
 
 ### Running the animation in FreeCAD
 
 * Open the assembly4 workbench
 * Run "Animate Assembly" with these parameters
 
-
 ![animation parameters](images/animationParameters.png "")
 
 ### Background
 
-This assembly is a bottom-up design (no master sketch), mostly because I already had created some of the parts prior to using assembly4.
+This assembly is a top-down design (using a minimal master sketch).
 
-Parts are attached using features on the bodies as reference for LocalCoordinateSystems. For the moving parts these refernces are mostly circular reatures with **Concentric** attachment mode (i.e. **LCS_armRight** in **p_topBlock**).
+Parts are attached using the master sketch for the axes of the rotating parts as well as LCSs of adjacent parts.
 
-The other LCSs are attached in **XY tangent to surface** mode using a face and a vertex on that face as references. In some cases where a vertex in the right position was not available x & y offsets were used (i.e. **LCS_connector10mm_lower** in **bottomBlock**)
+Animation is controlled by the **time** variable. Nested conditional statements execute the different parts of the motion as the **time** variable is incremented. This way rotation and position parameters of the arms are calculated in the attachment section of moving parts. To keep the expression managable some intermediate variables are calculated in **Assembly/Variables**.
 
-Animation is controlled by the **time** variable. Nested conditional statements execute the different parts of the motion as the **time** variable is incremented. This way rotation und position parameters of the arms are calculated in the attachment section of the **LCS_screwhole** in **Parts/p_angleBar_8mm_arm**. To keep the expression managable some intermediate variables are calculated in **Model/Variables**.
+Some base dimensional parameters are kept in the **Spreadsheet** and can be modified via the spreadsheet workbench.
