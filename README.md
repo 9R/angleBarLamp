@@ -19,12 +19,13 @@ The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) an
 
 ## Other parts
 
-### Screws:
+### Screws & Nuts:
 ##### topBlock
-  * 2x M3x28
+  * 2x ISO4762 M3x28 hexagonal socket head
+  * 2x DIN467 knurled flat nut (or similar)
       
 ##### COB LED attachment
-  * 4x M3x4
+  * 4x ISO7380-1 M3x4 button head
 
 ### Angle bars for arms and foot (length can be modified to suit needs):
   * 2x  8mm x 400mm
@@ -34,7 +35,7 @@ The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) an
   * 480mm of DN32 HT pipe 
 
 ### Electronics:
-  * 2x COP LEDs that suite your needs
+  * 2x COB LEDs that suite your needs (a width of 8-10mm is recommended)
   * Power supply
   * Switch or dimmer (check workshoptoolset)
   * 2x 1.5m wire
