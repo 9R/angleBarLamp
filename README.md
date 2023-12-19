@@ -1,14 +1,26 @@
 # Folding AngleBarLamp
 
-This is a folding lamp made out of 3d-printed parts and angle-bars. The design was inspired by the lamps from [kliments workshoptoolset](https://github.com/kliment/workshoptoolset)
+This is a folding lamp made out of 3d-printed parts and angle-bars. The design
+was inspired by the lamps from 
+[kliments workshoptoolset](https://github.com/kliment/workshoptoolset)
 
 ![folding animation](images/angleBarLamp.png "")
 
-The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) and the [assembly4 workbench v0.50.6](https://github.com/Zolko-123/FreeCAD_Assembly4).
+The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/)
+and the
+[assembly4 workbench v0.50.6](https://github.com/Zolko-123/FreeCAD_Assembly4).
 
 ## Printed parts
 
+The parts don't require any special settings, recommended print parameters are:
+
+* Tested with PLA, PETG should work as well.
+* 4 or 5 perimenter layers
+* no support required
+
 ### TopBlock
+
+Make sure to print this part upside down to avoid the need for support material
 ![folding animation](images/topBlock.png "TopBlock")
 
 ### BottomBlock
@@ -16,6 +28,12 @@ The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) an
 
 ### CableClips
 ![folding animation](images/cableClip.png "CableClip")
+
+### BaseCap
+
+If availabe this part can also be printed in TPU. That way you get a elastic,
+more durable bumper at the bottom.
+![folding animation](images/baseCap.png "baseCap")
 
 ## Other parts
 
@@ -55,8 +73,14 @@ The lamp parts were designed using [Freecad 0.21.1](https://www.freecad.org/) an
 
 This assembly is a top-down design (using a minimal master sketch).
 
-Parts are attached using the master sketch for the axes of the rotating parts as well as LCSs of adjacent parts.
+Parts are attached using the master sketch for the axes of the rotating parts
+as well as LCSs of adjacent parts.
 
-Animation is controlled by the **time** variable. Nested conditional statements execute the different parts of the motion as the **time** variable is incremented. This way rotation and position parameters of the arms are calculated in the attachment section of moving parts. To keep the expression managable some intermediate variables are calculated in **Assembly/Variables**.
+Animation is controlled by the **time** variable. Nested conditional statements
+execute the different parts of the motion as the **time** variable is
+incremented. This way rotation and position parameters of the arms are
+calculated in the attachment section of moving parts. To keep the expression
+managable some intermediate variables are calculated in **Assembly/Variables**.
 
-Some base dimensional parameters are kept in the **Spreadsheet** and can be modified via the spreadsheet workbench.
+Some base dimensional parameters are kept in the **Spreadsheet** and can be
+modified via the spreadsheet workbench.
